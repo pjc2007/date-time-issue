@@ -1,0 +1,7 @@
+{
+  "name": "date-time-issue",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
