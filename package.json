@@ -4,6 +4,7 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
+    "serve": "ionic serve --host=127.0.0.1",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -27,6 +28,7 @@
     "@capacitor/keyboard": "7.0.3",
     "@capacitor/status-bar": "7.0.3",
     "@ionic/angular": "^8.0.0",
+    "date-fns": "^4.1.0",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

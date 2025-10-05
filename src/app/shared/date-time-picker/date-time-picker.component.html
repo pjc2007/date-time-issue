@@ -1,0 +1,48 @@
+<!-- Dynamically set the id and trigger, so we can have more than one instance
+of this on the one form -->
+<div class="pointer" [id]="triggerId">
+  {{ ionDateTimeValue | mmDateTimeFormat : dateTimePattern }}
+</div>
+@if (!disabled) {
+<ion-modal
+  [trigger]="triggerId"
+  show-backdrop="true"
+  class="date-time-modal"
+  show-backdrop="true"
+  arrow="false"
+>
+  <ng-template>
+    <!-- Had to force date time to 24 hours until issue fixed 
+    See https://github.com/ionic-team/ionic-framework/issues/25183 -->
+    <ion-datetime
+      #dateTime
+      [color]="isDarkMode ? 'brand-mint' : 'date-time-light-mode'"
+      [value]="ionDateTimeValue"
+      [locale]="culture"
+      presentation="time-date"
+      [disabled]="disabled"
+      [min]="ionDateTimeMin"
+      [max]="ionDateTimeMax"
+      [readonly]="disabled"
+      hourCycle="h23"
+      (ionChange)="ionChange($event)"
+      (ngModelChange)="onChange($event)"
+    >
+      <span slot="time-label">Time</span>
+      <!-- win-buttons will reverse the order of the OK/Cancel buttons -->
+      <ion-buttons slot="buttons" [ngClass]="{ 'win-buttons': isWindows }">
+        <ion-button
+          [color]="isDarkMode ? '' : 'primary'"
+          (click)="dateTime.cancel(true)"
+          >Cancel</ion-button
+        >
+        <ion-button
+          [color]="isDarkMode ? '' : 'primary'"
+          (click)="dateTime.confirm(true)"
+          >Ok</ion-button
+        >
+      </ion-buttons>
+    </ion-datetime>
+  </ng-template>
+</ion-modal>
+}

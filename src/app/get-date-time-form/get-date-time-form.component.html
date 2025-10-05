@@ -1,0 +1,8 @@
+<p>
+   @if (mainForm) {
+    <div>Date time</div>
+    <form [formGroup]="mainForm">
+      <app-date-time-picker [formControlName]="formFieldNamesDateTime"></app-date-time-picker>
+    </form>
+  }
+</p>

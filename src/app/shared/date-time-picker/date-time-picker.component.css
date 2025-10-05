@@ -1,0 +1,8 @@
+.win-buttons {
+  flex-direction: row-reverse;
+}
+
+.pointer {
+  color: var(--mm-text-colour);
+  white-space: nowrap;
+}
